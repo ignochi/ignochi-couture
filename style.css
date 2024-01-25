@@ -1,0 +1,630 @@
+body {
+    font-family: Montserrat, sans-serif, sans-serif;
+    margin: 0;
+    background-color: var(--colour2);
+}
+
+:root {
+    --colour1: #000;
+    --colour2: #ffffff;
+    --colour3: rgba(156, 156, 156, 0.7);
+    --colour4: rgba(70, 69, 69, 1.0);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* navigation bar */     
+nav:first-of-type {
+    background-color: var(--colour1, #000);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.logo {
+    font-size: 23px;
+    letter-spacing: 4px;
+    background-color: var(--colour1, #000);
+    color: var(--colour2);
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.logo > .menu-button {
+    position: absolute;
+    right: 0;
+}
+
+/* dropdown */
+.dropdownBlur {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.dropdownMainContent {
+    width: 68%;
+    height: 100%;
+    background-color: var(--colour2);
+    position: absolute;
+    top: 0;
+    overflow: auto;
+}
+
+.closeMenuButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    padding: 8px 16px;
+    border: none;
+}
+
+.closeMenuButton:hover {
+    background-color: #757575;
+}
+
+.dropdownMainContent > .logo {
+    background-color: transparent;
+    color: var(--colour1, #000);
+    margin: auto;
+    height: 65px;
+    line-height: 105px;
+    padding-left: 16px;
+}
+
+/* dropdown links (the main part) */
+.dropdownLinks {
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+    list-style-type: none;
+}
+
+.dropdownLinks a {
+    text-decoration: none;
+    color: #757575;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 11px 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* jeans' dropdown */
+#jeans {color: var(--colour1, #000);}
+
+.jeansDropdown {
+    list-style-type: none;
+    margin: 10px 23px;
+    padding: 0;
+    font-size: 18px;
+}
+
+.jeansDropdown a {
+    font-size: 15px;
+    padding: 10px 16px;
+}
+.jeanToggleClass {
+    display: none;
+}
+
+/* the second <ul> in the dropdown */
+.dropdownLinks + ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 80px;
+    list-style-type: none;
+
+    /* background-color: red; */
+}
+
+.dropdownLinks + ul a, .newsletterButton {
+    text-decoration: none;
+    color: var(--colour1, #000);
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 8px 16px;
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+
+    background-color: transparent;
+    text-align: left;
+    border: none;
+}
+
+.dropdownLinks a:hover, .dropdownLinks + ul a:hover, .newsletterButton:hover {
+    background-color: var(--colour3, gray);
+    color: var(--colour1);
+}
+
+/* the newsletter section */
+.newsletterBlur {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    /* padding: 45px 10px 0 10px; */
+    padding: 45px 0 0 0;
+    display: none;
+    /* display: block; */
+}
+
+.newsletter {
+    margin: auto;
+    background-color: var(--colour2);
+    padding: 2em 3.1em 3em;
+    animation: nlAnimation 0.5s linear;
+    width: calc(100% - 18px);
+    /* background-color: yellowgreen; */
+}
+.newsletter > div:first-child {
+    height: 2.5em;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.newsletter > div:first-child > button:first-of-type {
+    height: 100%;
+    aspect-ratio: 1/1;
+    font-size: 36px;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+}
+.newsletter > div:first-child > button:first-of-type:hover {
+    background-color: var(--colour3);
+}
+.newsletter > h2 {
+    margin: 0.4em auto 0.7em auto;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.8em;
+    letter-spacing: 5px;
+    background-color: transparent;
+    text-align: center;
+}
+.newsletter > p {
+    font-size: 15px;
+    margin: 4px 0;
+    text-align: center;
+    line-height: 1.5;
+}
+.newsletter > input {
+    display: block;
+    width: 100%;
+    margin: 1em 0 0 0;
+    padding: 10px 7px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+.newsletter > input + button {
+    display: block;
+    margin: 1.2em auto auto auto;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    outline: none;
+    background-color: #f44336;
+    color: var(--colour2);
+}
+@keyframes nlAnimation {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* END the newsletter section */
+/* END the second <ul> in the dropdown */
+
+/* END dropdown */
+
+
+/* the main content of the webpage */
+main {
+    width: calc(100% - 32px);
+    background-color: var(--colour2);
+    margin: 85px auto 20% auto;
+    /*
+    the margin-top:; value must be the same as the height
+      of nav:first-of-type
+    */
+}
+main > header {
+    background-color: var(--colour2);
+    height: 85px;
+    display: flex; /* to position the #mainHeaderContent */
+    align-items: center;
+}
+#mainHeaderContent {
+    width: 100%;
+    background-color: var(--colour2);
+    color: var(--colour1, #000);
+}
+#shoppingCart {
+    margin-right: 45px;
+}
+.jeansIcons {
+    position: absolute;
+    bottom: 0;
+}
+
+/* the grid that displays the clothing items for sale */
+.itemsForSaleCover {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* column-gap: 10%; */
+    column-gap: 32px;
+    row-gap: 1.2%;
+    background-color: var(--colour2);
+}
+.itemsForSale {
+    position: relative;
+    /* overflow: hidden; */
+}
+.itemsForSale img {
+    width: 100%;
+    filter: grayscale(50%);
+    /* transition: 2s; */
+}
+.itemsForSale:hover img {
+    filter: none;
+}
+
+/* the first image */
+.itemsForSale:first-of-type {
+    grid-column: 1 / 3;
+}
+.itemsForSale:first-of-type img {
+    filter: none;
+}
+.newArrivals {
+    font-size: 37px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 37px;
+    left: 30px;
+    color: var(--colour2);
+    white-space: nowrap;
+}
+.newArrivals + p {
+    display: none;
+}
+
+.shopNow {
+    font-size: 18px;
+    padding: 15px 28px;
+    background-color: var(--colour1);
+    color: var(--colour2);
+    position: absolute;
+    top: 103px;
+    left: 35px;
+    border: none;
+    /* border none will become useless if I
+       ever change it to a link
+    */
+}
+/* END the first image */
+
+.itemName {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    /* color: rgb(147, 146, 146); */
+    color: var(--colour4, gray);
+}
+.itemPrices {
+    font-size: 16px;
+    color: var(--colour1);
+}
+.imageTag {
+    font-size: 15px;
+    background-color: var(--colour1);
+    color: var(--colour2);
+    padding: 3px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* the "buy now" button that displays when .itemForSale is hovered over */
+.itemsForSale > div:first-of-type {
+    position: relative;
+}
+.buyNow {
+    border: none;
+    color: var(--colour2);
+    background: var(--colour1);
+    white-space: nowrap;
+    padding: 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.itemsForSale > div:first-of-type:hover .buyNow {
+    display: inline-block;
+}
+.buyNow:hover {
+    background-color: rgb(200, 187, 187);
+    color: var(--colour1);
+}  /* END the "buy now" button that displays when .itemForSale is hovered over */
+
+
+/* the subscribe section */
+.subscribe {
+    width: 100%;
+    background-color: var(--colour1);
+    padding: 60px 16px 50px;
+    /* margin-bottom: 80px;  */
+}
+.subscribe > header {
+    color: var(--colour2);
+    font-size: 36px;
+    background-color: transparent;
+}
+.subscribe > header + p {
+    color: var(--colour2);
+    font-size: 16px;
+    background-color: transparent;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.subscribe input[type="email"] {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 5px;
+    margin-bottom: 13px;
+}
+.subscribe button {
+    font-size: 16px;
+    white-space: nowrap;
+    border: none;
+    padding: 10px 16px;
+    background-color: rgb(253, 77, 77);
+    color: var(--colour2);
+}
+/* END the subscribe section */
+
+/* footer */
+footer:last-of-type {
+    background-color: #f1f1f1;
+    padding: 68px 0 70px 16px;
+    display: grid;
+    grid-template-columns: 33.33333% 33.33333% 33.33333%;
+    position: relative; /* just to position .copyright */
+}
+
+.contact > h4 {
+    font-weight: 400;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: var(--colour1);
+    margin: 10px 0;
+}
+.contact > p:first-of-type {
+    font-size: 12px;
+    color: var(--colour1);
+    text-align: center;
+    margin: 0;
+}
+.contact input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-top: 12px;
+    display: block;
+    width: 100%;
+    cursor: text;
+}
+.contact button {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: var(--colour1);
+    user-select: none;
+    border: none;
+    padding: 8px 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.contact input:focus {
+    outline: none;
+    border: 2px solid black;
+    border-radius: 4px;
+}  /* END the first column */
+
+/* the second column */
+.about {
+    padding: 0 8px;
+    font-size: 12px;
+    text-align: center;
+}
+.about > h4 {
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 20px;
+}
+.about a {
+    color: var(--colour1);
+    background-color: transparent;
+}  /* END the second column */
+
+/* the third column */
+.store {
+    text-align: justify;
+    font-size: 12px;
+    padding: 0 8px;
+    position: relative;
+}
+.store > h4 {
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 20px;
+    text-align: justify;
+}
+.store a {
+    color: var(--colour1);
+    text-decoration: none;
+    word-wrap: break-word;
+}
+.socialIcons {
+    font-size: 18px;
+}  /* END the third column */
+
+.copyright {
+    /* margin-top: 85px; */
+    height: 85px;
+    background-color: var(--colour1);
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: -85px;
+    left: 0;
+    /* to center the copyright text */
+    display: grid;
+    align-items: center;
+}
+.copyright > p {
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+.copyright a:last-of-type {
+    color: #fff;
+    text-decoration: underline;
+    word-break: break-all;
+}  /* END footer */
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 350px) {
+    .dropdownMainContent {
+        width: 82%;
+    }
+}
+
+/* for devices 600px and up */
+@media screen and (min-width: 600px) { /* and (max-width: 992px) */
+
+    /* the main content of the webpage */
+    .newArrivals {
+        font-size: 64px;
+    }
+    .newArrivals + p {
+        display: block;
+        background-color: transparent;
+        font-weight: 400;
+        font-family: "Montserrat", sans-serif;
+        font-size: 36px;
+        color: var(--colour2);
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 137px;
+        left: 30px;
+    }
+    .shopNow {
+        top: 200px;
+    }  /* END the main content of the webpage */
+
+    /* dropdown */
+    .dropdownMainContent {
+        width: 33%;
+        /* display: block; */
+    }  /* END dropdown */
+}  /* END for devices 600px and up */
+
+@media screen and (min-width: 992px) {
+    nav:first-of-type {
+        display: none;
+    }
+    .dropdownBlur {
+        display: block;
+        width: 24%;
+    }
+    .logo > .closeMenuButton {
+        display: none;
+    }
+    .dropdownMainContent {
+        /* display: block; */
+        width: 100%;
+    }
+    .newsletter {
+        width: 900px;
+    }
+    main {
+        /* width: 908px; */
+        width: calc(76% - 32px);
+        margin: 0 auto 4% calc(24% + 16px);
+    }
+
+    /* the grid that displays the clothing items for sale */
+    .itemsForSaleCover {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    /* the first image */
+    .itemsForSaleCover .itemsForSale:first-of-type {
+        grid-column: 1 / 5;
+    }
+
+    /* the subscribe section */
+    .subscribe, footer:last-of-type {
+        width: 76%;
+        margin-left: 24%;
+        /* width: 66%; */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        width: 918px;
+    }
+    .subscribe, footer:last-of-type {
+        width: 950px;
+        /* margin-left: 24%; */
+        /* width: 66%; */
+    }
+}

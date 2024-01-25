@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ignochi Couture</title>
+        <meta charset="=UTF-8" />
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="style.css" />
+
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat" />
+
+        <script src="https://kit.fontawesome.com/1f128de6ce.js"
+        crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <nav>
+            <p class="logo">
+                I-COUTURE<i class="fas fa-shopping-cart"></i></b>
+                <i class="fas fa-bars menu-button"
+                onclick="showTheDropdown()"></i>
+            </p>
+        </nav>
+
+        <!-- navigation links -->
+        <section class="dropdownBlur"> <!-- the dropdown black blurry background -->
+            <div class="dropdownMainContent">
+
+                <p class="logo">
+                    <button type="button" class="fas fa-close closeMenuButton"
+                    onclick="hideTheDropdown()" style="font-size: 22px;"></button>
+                    <b>I-COUTURE<i class="fas fa-shopping-cart"></i></b>
+                </p>
+    
+                <!-- main dropdown links -->
+                <ul class="dropdownLinks">
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Dresses</a></li>
+
+                    <li onclick="jeanToggleFunction()">
+                        <a href="#" id="jeans">Jeans <i class="fas fa-caret-down"></i></a>
+                    </li>
+                    <!-- jeans' dropdown -->
+                    <ul class="jeansDropdown" id="jeansDropdown">
+                        <li><a href="#" class="typeofJeans">Skinny</a></li>
+                        <li><a href="#" class="typeofJeans">Relaxed</a></li>
+                        <li><a href="#" class="typeofJeans">Bootcut</a></li>
+                        <li><a href="#" class="typeofJeans">Straight</a></li>
+                    </ul>  <!-- END jeans' dropdown -->
+
+                    <li><a href="#">Jackets</a></li>
+                    <li><a href="#">Gymwear</a></li>
+                    <li><a href="#">Blazers</a></li>
+                    <li><a href="#">Shoes</a></li>
+                </ul>  <!-- END main dropdown links-->
+
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button type="button" class="newsletterButton" onclick="openNewsletter()">Newsletter</button>
+                        <section class="newsletterBlur">
+                            <article class="newsletter">
+                                <div><button class="fas fa-close" onclick="closeNewsletter()"></button></div>
+                                <h2>NEWSLETTER</h2>
+                                <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+                                <input type="email" placeholder="Enter e-mail" />
+                                <button>Subscribe</button>
+                            </article>
+                        </section>
+                    </li>
+                    <li><a href="#subscribe">Subscribe</a></li>
+                </ul>
+            </div>  <!-- END <div class="dropdownMainContent"> -->
+        </section>  <!-- END the dropdown black blurry background | it's id="dropdownBlur" -->
+
+        <main>
+            <header>
+                <p class="logo" id="mainHeaderContent">
+                    Jeans
+                    <i class="fas fa-shopping-cart menu-button jeansIcons" id="shoppingCart"></i>
+                    <i class="fas fa-search menu-button jeansIcons"></i>
+                </p>
+            </header>
+
+            <!-- the grid that dislays the clothing items for sale -->
+            <section class="itemsForSaleCover">
+                <article class="itemsForSale">
+                    <img src="images/mainImage.jpg" alt="clothing item for sale" />
+                    <p class="newArrivals">New arrivals</p>
+                    <p>COLLECTION 2016</p>
+                    <button type="button" class="shopNow">SHOP NOW</button>
+                    <p class="itemName">8 items</p>
+                </article>
+                <article class="itemsForSale">
+                    <img src="images/jeans1.jpg" alt="Ripped Skinny Jeans" />
+                    <p class="itemName">Ripped Skinny Jeans</p>
+                    <span class="itemPrices"><b>&dollar;24.99</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <div>
+                        <img src="images/jeans2.jpg" alt="Mega Ripped Jeans" />
+                        <button class="buyNow">Buy now</button>
+                    </div>
+                    <span class="imageTag">New</span>
+                    <p class="itemName">Mega Ripped Jeans</p>
+                    <span class="itemPrices"><b>&dollar;19.99</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <img src="images/jeans2.jpg" alt="Mega Ripped Jeans" />
+                    <p class="itemName">Mega Ripped Jeans</p>
+                    <span class="itemPrices"><b>&dollar;19.99</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <img src="images/jeans1.jpg" alt="Washed Skinny Jeans" />
+                    <p class="itemName">Washed Skinny Jeans</p>
+                    <span class="itemPrices"><b>&dollar;20.50</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <img src="images/jeans3.jpg" alt="Washed Skinny Jeans" />
+                    <p class="itemName">Washed Skinny Jeans</p>
+                    <span class="itemPrices"><b>&dollar;20.50</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <img src="images/jeans4.jpg" alt="Vintage Skinny Jeans" />
+                    <p class="itemName">Vintage Skinny Jeans</p>
+                    <span class="itemPrices"><b>&dollar;20.50</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <div>
+                        <img src="images/jeans4.jpg" alt="Vintage Skinny Jeans" />
+                        <button class="buyNow">Buy now</button>
+                    </div>
+                    <span class="imageTag">sale</span>
+                    <p class="itemName">Vintage Skinny Jeans</p>
+                    <span class="itemPrices"><b>&dollar;20.50</b></span>
+                </article>
+                <article class="itemsForSale">
+                    <img src="images/jeans1.jpg" alt="Ripped Skinny Jeans" />
+                    <p class="itemName">Ripped Skinny Jeans</p>
+                    <span class="itemPrices"><b>&dollar;24.99</b></span>
+                </article>
+            </section>
+        </main>  <!--END the grid that dislays the clothing items for sale -->
+
+        <section class="subscribe" id="subscribe">
+            <header class="">Subscribe</header>
+            <p>To get special offers and VIP treatment:</p>
+            <form id="subscriptionForm">
+                <input type="email" />
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <footer>
+            <article class="contact" id="contact">
+                <h4>Contact</h4>
+                <p>Questions? Go ahead.</p>
+                <form id="contactForm">
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="text" placeholder="Subject" />
+                    <input type="text" placeholder="Message" />
+                    <button type="submit">Send</button>
+                </form>
+            </article>
+            <article class="about">
+                <h4>About</h4>
+                <p><a href="#">About us</a></p>
+                <p><a href="#">We're hiring</a></p>
+                <p><a href="#">Support</a></p>
+                <p><a href="#">Find store</a></p>
+                <p><a href="#">Shipment</a></p>
+                <p><a href="#">Payment</a></p>
+                <p><a href="#">Gift card</a></p>
+                <p><a href="#">Return</a></p>
+                <p><a href="#">Help</a></p>
+            </article>
+            <address class="store">
+                <h4>Store</h4>
+                <p><i class="fas fa-map-marker-alt"></i> I-COUTURE</p>
+                <p><a href=""><i class="fas fa-phone"></i> 1035498281</a></p>
+                <p><a href=""><i class="fas fa-envelope"></i> icouture@gmail.com</a></p>
+                <h4 class="weAccept">We accept</h4>
+                <p><i class="fas fa-money-check"></i> Amex</p>
+                <p><i class="far fa-credit-card"></i> Credit Card</p>
+                <p class="socialIcons">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-snapchat"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </p>
+            </address>
+            <section class="copyright">
+                <p>Copyright &copy;2023</p>
+                <p>
+                    design credit: 
+                    <a href="https://www.w3schools.com/w3css/tryw3css_templates_clothing_store.htm"
+                    title="www.w3schools.com" target="_blank">w3schools Clothing Store Template</a>
+                </p>
+            </section>
+        </footer>
+
+
+        <script src="main.js"></script>
+    </body>
+</html>
